@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Walmart Forecast UI</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Walmart Weekly Forecast</h1>
+    <form id="form">
+      <div class="row">
+        <label>Series</label>
+        <select id="seriesSelect"></select>
+        <button type="button" id="applySeries">Apply</button>
+      </div>
+      <div class="row">
+        <label>Store</label>
+        <input type="number" id="store" value="1" min="1" required>
+      </div>
+      <div class="row">
+        <label>Dept</label>
+        <input type="number" id="dept" value="1" min="1" required>
+      </div>
+      <div class="row">
+        <label>Horizon (weeks)</label>
+        <input type="number" id="horizon" value="8" min="1" max="52" required>
+      </div>
+      <div class="row">
+        <label>Mode</label>
+        <select id="mode">
+          <option value="global_rf" selected>Global RF</option>
+          <option value="seasonal_naive">Seasonal Naive (52w)</option>
+          <option value="sarimax">SARIMAX (per series)</option>
+          <option value="prophet">Prophet (per series)</option>
+        </select>
+      </div>
+      <button type="submit">Forecast</button>
+      <button type="button" id="train">Train RF</button>
+    </form>
+    <pre id="output"></pre>
+    <div class="chart-wrap"><canvas id="chart" height="120"></canvas></div>
+    <div class="row"><button type="button" id="loadSeries">Load Top Series</button> <a class="btn" href="/leaderboard" target="_blank">Run Leaderboard</a></div>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
