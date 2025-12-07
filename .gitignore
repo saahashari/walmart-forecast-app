@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+*.log
+
+# Virtual env
+.venv/
+
+# Build / OS
+.DS_Store
+dist/
+build/
+
+# Data & artifacts (keep sample only)
+data/
+!data/sample/**
+artifacts/
+
+# Models / binaries / archives
+*.joblib
+*.pkl
+*.zip
+*.tar
+*.gz
+
+# Node (if ever used)
+node_modules/
