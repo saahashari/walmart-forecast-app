@@ -14,9 +14,9 @@ dist/
 build/
 
 # Data & artifacts (keep sample only)
-data/
+data/*
+!data/sample/
 !data/sample/**
-artifacts/
 
 # Models / binaries / archives
 *.joblib
